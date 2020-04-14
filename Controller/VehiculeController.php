@@ -17,14 +17,14 @@ class VehiculeController{
         $vehicule = new Vehicule(null, $_POST['name'], $_POST['type']);
         $VehiculeManager = new VehiculeManager();
         $VehiculeManager->insert($vehicule);
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 
     public function delete($id)
     {
         $VehiculeManager = new VehiculeManager();
         $VehiculeManager->delete($id);
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 
     public function updateForm($id)
@@ -48,6 +48,6 @@ class VehiculeController{
         $vehicule = new Vehicule($id, $_POST['name'], $_POST['type']);
         $VehiculeManager->update($vehicule);
 
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 }

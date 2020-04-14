@@ -1,18 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Starwars MVC</a>
+  <a class="navbar-brand" href="../starwarsMVC/home.html">Starwars MVC</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="../starwarsMVC/index.php?controller=default&action=home">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../starwarsMVC/home.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../starwarsMVC/index.php?controller=default&action=planetsPage">Planètes</a>
+        <a class="nav-link" href="../starwarsMVC/planets-page.html">Planètes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../starwarsMVC/index.php?controller=default&action=vehiculesPage">Véhicules</a>
+        <a class="nav-link" href="../starwarsMVC/vehicules-page.html">Véhicules</a>
       </li>
     </ul>
   </div>

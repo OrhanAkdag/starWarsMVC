@@ -50,14 +50,14 @@ class PlanetController{
         $planet = new Planet(null, $_POST['name'], $_POST['terrain'], $_POST['allegiance'], $_POST['status'], $_POST['key_fact'], $imageUrl);
         $planetManager = new PlanetManager();
         $planetManager->insert($planet);
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 
     public function delete($id)
     {
         $PlanetManager = new PlanetManager();
         $PlanetManager->delete($id);
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 
     public function updateForm($id)
@@ -126,6 +126,6 @@ class PlanetController{
             $PlanetManager->update_without_img($planet);
             }
 
-        header('Location: /starwarsMVC/index.php?controller=default&action=home');
+        header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
     }
 }

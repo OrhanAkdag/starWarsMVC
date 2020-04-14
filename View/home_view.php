@@ -12,7 +12,7 @@
     <div class="container">
     <h1>Welcome to my homepage</h1>
 
-    <a href="../starwarsMVC/index.php?controller=planet&action=addForm">
+    <a href="../starwarsMVC/index.php?controller=planet&action=addForm.html">
         <button style="margin-bottom:10px;" class="btn btn-success">Ajouter une planète</button>
     </a>
     <table class="table">
@@ -29,21 +29,21 @@
 
         <tbody>
             <?php
-                foreach ($planets as $art) {
+                foreach ($planets as $pla) {
                     ?>
                     <tr>
-                        <td><?php echo $art->getId()?></td>
-                        <td><?php echo $art->getName()?></td>
-                        <td><?php echo $art->getTerrain()?></td>
-                        <td><?php echo $art->getAllegiance()?></td>
-                        <td><?php echo $art->getStatus()?></td>
-                        <td><?php echo $art->getKey_fact()?></td>
+                        <td><?php echo $pla->getId()?></td>
+                        <td><?php echo $pla->getName()?></td>
+                        <td><?php echo $pla->getTerrain()?></td>
+                        <td><?php echo $pla->getAllegiance()?></td>
+                        <td><?php echo $pla->getStatus()?></td>
+                        <td><?php echo $pla->getKey_fact()?></td>
                         <td>
-                        <img style="max-width: 140px;" src="<?php echo('assets/img/'.$art->getImage()); ?>"
-                            alt="Image de la planète <?php $art->getImage(); ?>"/> 
+                        <img style="max-width: 140px;" src="<?php echo('assets/img/'.$pla->getImage()); ?>"
+                            alt="Image de la planète <?php $pla->getImage(); ?>"/> 
                         <td>
-                            <a href="../starwarsMVC/index.php?controller=planet&action=delete&id=<?php echo $art->getId()?>">Supprimer</a>
-                            <a href="../starwarsMVC/index.php?controller=planet&action=updateForm&id=<?php echo $art->getId()?>">Modifier</a>
+                            <a href="../starwarsMVC/index.php?controller=planet&action=delete&id=<?php echo $pla->getId()?>">Supprimer</a>
+                            <a href="../starwarsMVC/index.php?controller=planet&action=updateForm&id=<?php echo $pla->getId()?>">Modifier</a>
                         </td>
                     </tr>
                     <?php
@@ -53,7 +53,7 @@
     </table>
 
 
-    <a href="../starwarsMVC/index.php?controller=vehicule&action=addForm">
+    <a href="../starwarsMVC/index.php?controller=vehicule&action=addForm.html">
         <button style="margin-bottom:10px;" class="btn btn-success">Ajouter un vehicule</button>
     </a>
     <table class="table">

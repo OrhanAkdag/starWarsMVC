@@ -1,19 +1,19 @@
 <?php
     require 'include.php';
 
-    if($_GET['controller'] === 'default' && $_GET['action'] === 'home'){
+    if($_GET['controller'] === 'default' && $_GET['action'] === 'home.html'){
         $PlanetController = new DefaultController();
         $PlanetController->home();
     }
-    else if($_GET['controller'] === 'default' && $_GET['action'] === 'planetsPage'){
+    else if($_GET['controller'] === 'default' && $_GET['action'] === 'planets-page.html'){
         $PlanetController = new DefaultController();
         $PlanetController->planetsPage();
     }
-    else if($_GET['controller'] === 'default' && $_GET['action'] === 'vehiculesPage'){
+    else if($_GET['controller'] === 'default' && $_GET['action'] === 'vehicules-page.html'){
         $VehiculeController = new DefaultController();
         $VehiculeController->vehiculesPage();
     }
-    else if($_GET['controller'] === 'planet' && $_GET['action'] === 'addForm'){
+    else if($_GET['controller'] === 'planet' && $_GET['action'] === 'addForm.html'){
         $PlanetController = new PlanetController();
         $PlanetController->addForm();
     }

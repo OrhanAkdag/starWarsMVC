@@ -39,12 +39,12 @@
                         <td><?php echo $pla->getStatus()?></td>
                         <td><?php echo $pla->getKey_fact()?></td>
                         <td>
-                        <img style="max-width: 140px;" src="<?php echo('assets/img/'.$art->getImage()); ?>"
-                            alt="Image de la planète <?php $art->getImage(); ?>"/>                     
+                        <img style="max-width: 140px;" src="<?php echo('assets/img/'.$pla->getImage()); ?>"
+                            alt="Image de la planète <?php $pla->getImage(); ?>"/>                     
                         </td>
                         <td>
-                            <a href="../starwarsMVC/index.php?controller=planet&action=delete&id=<?php echo $art->getId()?>">Supprimer</a>
-                            <a href="../starwarsMVC/index.php?controller=planet&action=updateForm&id=<?php echo $art->getId()?>">Modifier</a>
+                            <a href="../starwarsMVC/index.php?controller=planet&action=delete&id=<?php echo $pla->getId()?>">Supprimer</a>
+                            <a href="../starwarsMVC/index.php?controller=planet&action=updateForm&id=<?php echo $pla->getId()?>">Modifier</a>
                         </td>
                     </tr>
                     <?php
