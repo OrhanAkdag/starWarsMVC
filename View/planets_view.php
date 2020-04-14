@@ -29,15 +29,15 @@
 
         <tbody>
             <?php
-                foreach ($planets as $art) {
+                foreach ($planets as $pla) {
                     ?>
                     <tr>
-                        <td><?php echo $art->getId()?></td>
-                        <td><?php echo $art->getName()?></td>
-                        <td><?php echo $art->getTerrain()?></td>
-                        <td><?php echo $art->getAllegiance()?></td>
-                        <td><?php echo $art->getStatus()?></td>
-                        <td><?php echo $art->getKey_fact()?></td>
+                        <td><?php echo $pla->getId()?></td>
+                        <td><?php echo $pla->getName()?></td>
+                        <td><?php echo $pla->getTerrain()?></td>
+                        <td><?php echo $pla->getAllegiance()?></td>
+                        <td><?php echo $pla->getStatus()?></td>
+                        <td><?php echo $pla->getKey_fact()?></td>
                         <td>
                         <img style="max-width: 140px;" src="<?php echo('assets/img/'.$art->getImage()); ?>"
                             alt="Image de la planète <?php $art->getImage(); ?>"/>                     
