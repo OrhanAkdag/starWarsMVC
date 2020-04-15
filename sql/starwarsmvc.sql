@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 14 avr. 2020 à 13:19
+-- Généré le :  mer. 15 avr. 2020 à 14:46
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.4.0
 
@@ -25,6 +25,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `categorie`
+--
+
+DROP TABLE IF EXISTS `categorie`;
+CREATE TABLE IF NOT EXISTS `categorie` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id`, `name`) VALUES
+(3, 'sport1'),
+(4, 'ville'),
+(5, 'samsung1');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `planets`
 --
 
@@ -39,7 +61,14 @@ CREATE TABLE IF NOT EXISTS `planets` (
   `image` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `planets`
+--
+
+INSERT INTO `planets` (`id`, `name`, `terrain`, `allegiance`, `status`, `key_fact`, `image`) VALUES
+(38, 'orhan38', 'test', 'Corporate Alliance', 'test', '            36', '5e9711b877b0a.jpeg');
 
 -- --------------------------------------------------------
 
@@ -52,8 +81,28 @@ CREATE TABLE IF NOT EXISTS `vehicule` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `type` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  `catid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `catid` (`catid`)
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `vehicule`
+--
+
+INSERT INTO `vehicule` (`id`, `name`, `type`, `catid`) VALUES
+(30, 'samsung', 'Diesel', 5),
+(31, 'ma voiture', 'Essence', 4);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `vehicule`
+--
+ALTER TABLE `vehicule`
+  ADD CONSTRAINT `test` FOREIGN KEY (`catid`) REFERENCES `categorie` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
