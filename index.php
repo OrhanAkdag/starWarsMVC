@@ -13,7 +13,7 @@
         $VehiculeController = new DefaultController();
         $VehiculeController->vehiculesPage();
     }
-    else if($_GET['controller'] === 'planet' && $_GET['action'] === 'addForm.html'){
+    else if($_GET['controller'] === 'planet' && $_GET['action'] === 'addForm'){
         $PlanetController = new PlanetController();
         $PlanetController->addForm();
     }

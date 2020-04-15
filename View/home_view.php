@@ -12,7 +12,7 @@
     <div class="container">
     <h1>Welcome to my homepage</h1>
 
-    <a href="../starwarsMVC/index.php?controller=planet&action=addForm.html">
+    <a href="../starwarsMVC/index.php?controller=planet&action=addForm">
         <button style="margin-bottom:10px;" class="btn btn-success">Ajouter une planète</button>
     </a>
     <table class="table">
@@ -53,7 +53,7 @@
     </table>
 
 
-    <a href="../starwarsMVC/index.php?controller=vehicule&action=addForm.html">
+    <a href="../starwarsMVC/index.php?controller=vehicule&action=addForm">
         <button style="margin-bottom:10px;" class="btn btn-success">Ajouter un vehicule</button>
     </a>
     <table class="table">
