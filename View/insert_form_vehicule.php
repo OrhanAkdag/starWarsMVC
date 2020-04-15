@@ -20,6 +20,9 @@ include 'navbar.php'
 <label>Name</label>
 <input name="name" class="form-control">
 
+<?php
+               // var_dump($type);
+            ?>
 <div class="form-group">
             <label class="text-white">Type</label>
             <select name="type" class="form-control" placeholder="Type">
@@ -30,6 +33,23 @@ include 'navbar.php'
             ?>
             </select>
 </div>
+
+<div class="form-group">
+            <label class="text-white">Type</label>
+            <?php
+              //  var_dump($categorie);
+
+            ?>
+            <select name="catid" class="form-control" placeholder="Type">
+            <?php
+                var_dump($categorie);
+                foreach($categorie as $cat){
+                    echo('<option value="'.$cat->getId().'">'.$cat->getName().'</option>');
+                }
+            ?>
+            </select>
+</div>
+
     <input class="btn btn-success" type="submit" value="valider">
 </form>
 </div>

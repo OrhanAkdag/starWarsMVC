@@ -6,5 +6,8 @@
     require 'Model/Manager/VehiculeManager.php';
     require 'Model/Class/Vehicule.php';
     require 'Controller/VehiculeController.php';
+    require 'Model/Manager/CategorieManager.php';
+    require 'Model/Class/Categorie.php';
+    require 'Controller/CategorieController.php';
     require 'Controller/DefaultController.php';
 ;

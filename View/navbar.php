@@ -14,6 +14,9 @@
       <li class="nav-item">
         <a class="nav-link" href="../starwarsMVC/vehicules-page.html">Véhicules</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../starwarsMVC/categorie-page.html">Catégorie</a>
+      </li>
     </ul>
   </div>
 </nav>

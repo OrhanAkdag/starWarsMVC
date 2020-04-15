@@ -5,18 +5,20 @@ class Vehicule {
     protected $id;
     protected $name;
     protected $type;
-
+    protected $catid;
     /**
      * Personntype constructor
      *
      * @param string $name
      * @param string $type
      */
-    public function __construct($id, $name, $type )
+    public function __construct($id, $name, $type, $catid )
     {
         $this->id = $id;
         $this->name = $name;
         $this->type = $type;
+        $this->catid = $catid;
+
     }
 
     
@@ -77,6 +79,26 @@ class Vehicule {
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of catid
+     */ 
+    public function getCatid()
+    {
+        return $this->catid;
+    }
+
+    /**
+     * Set the value of catid
+     *
+     * @return  self
+     */ 
+    public function setCatid($catid)
+    {
+        $this->catid = $catid;
 
         return $this;
     }

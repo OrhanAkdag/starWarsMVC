@@ -10,19 +10,23 @@
             $vehicule = [];
             $sql =  'SELECT * FROM vehicule ORDER BY type';
             foreach  ($this->bdd->query($sql) as $row) {
-                $vehicule[] = new Vehicule($row['id'], $row['name'], $row['type']);
+                $vehicule[] = new Vehicule($row['id'], $row['name'], $row['type'], $row['catid']);
             }
 
             return $vehicule;
         }
 
+
         public function insert(Vehicule $vehicule)
         {
             $name = $vehicule->getName();
             $type = $vehicule->gettype();
-            $requete = $this->bdd->prepare("INSERT INTO vehicule (name, type) VALUES (?,?)");
+            $catid = $vehicule->getCatid();
+
+            $requete = $this->bdd->prepare("INSERT INTO vehicule (name, type, catid ) VALUES (?,?,?)");
             $requete->bindParam(1, $name);
             $requete->bindParam(2, $type);
+            $requete->bindParam(3, $catid);
             $requete->execute();
             $vehicule->setId($this->bdd->lastInsertId());
         }
@@ -40,7 +44,7 @@
             $requete->bindParam(1, $id);
             $requete->execute();
             $res = $requete->fetch();
-            $vehicule = new Vehicule($res['id'], $res['name'], $res['type']);
+            $vehicule = new Vehicule($res['id'], $res['name'], $res['type'], $res['catid']);
 
             return $vehicule;
         }
@@ -49,11 +53,13 @@
         {
             $name = $vehicule->getName();
             $type = $vehicule->gettype();
+            $catid = $vehicule->getCatid();
             $id = $vehicule->getId();
-            $requete = $this->bdd->prepare("UPDATE  vehicule SET name =? , type = ? WHERE id = ?");
+            $requete = $this->bdd->prepare("UPDATE  vehicule SET name =? , type = ?, catid = ? WHERE id = ?");
             $requete->bindParam(1, $name);
             $requete->bindParam(2, $type);
-            $requete->bindParam(3, $id);
+            $requete->bindParam(3, $catid);
+            $requete->bindParam(4, $id);
             $requete->execute();
         }
 

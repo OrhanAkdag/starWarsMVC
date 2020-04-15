@@ -7,7 +7,12 @@
 
 <body>
 <?php 
-include 'navbar.php'
+include 'navbar.php';
+var_dump($vehicule);
+
+var_dump($categorie);
+var_dump($type);
+
 ?>
 <div class="container">
     <h1>Mise à jour du vehicule <?php echo $vehicule->getName();?></h1>
@@ -36,6 +41,26 @@ include 'navbar.php'
             </select>
         </div>
 
+        <div class="form-group">
+            <label class="text-white">Type</label>
+            <?php
+              //  var_dump($categorie);
+
+            ?>
+            <select name="catid" class="form-control" placeholder="Type">
+            <?php
+                //var_dump($categorie);
+                foreach($categorie as $cat){
+                    $selected = '';
+                    if($vehicule->getCatid() === $cat->getId()){
+                        $selected = 'selected';
+                    }
+                    echo('<option '.$selected.' value="'.$cat->getId().'">'.$cat->getName().'</option>');
+                }
+            ?>
+            </select>
+        </div>
+        
         <input class="btn btn-success" type="submit" value="valider">
     </form>
 </div>

@@ -21,8 +21,20 @@ class DefaultController{
     {
 
         $vehiculeManager = new VehiculeManager();
+        $CategorieManager = new CategorieManager();
+
         $vehicule = $vehiculeManager->selectAll();
+        $categorie = $CategorieManager->selectAll();
 
         require 'View/vehicules_view.php';
+    }
+
+    public function categoriePage()
+    {
+
+        $categorieManager = new CategorieManager();
+        $categorie = $categorieManager->selectAll();
+
+        require 'View/categorie_view.php';
     }
 }

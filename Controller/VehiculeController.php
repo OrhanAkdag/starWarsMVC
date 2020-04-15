@@ -8,16 +8,17 @@ class VehiculeController{
             'Essence',
             'Electrique'
         ];
-        require 'View/insert_form_Vehicule.php';
+        return $type;
     }
 
     public function persistForm()
     {
 
-        $vehicule = new Vehicule(null, $_POST['name'], $_POST['type']);
+        $vehicule = new Vehicule(null, $_POST['name'], $_POST['type'], $_POST['catid']);
         $VehiculeManager = new VehiculeManager();
         $VehiculeManager->insert($vehicule);
         header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
+        //var_dump($vehicule);
     }
 
     public function delete($id)
@@ -29,23 +30,16 @@ class VehiculeController{
 
     public function updateForm($id)
     {
-        $type=[
-            'Diesel',
-            'Essence',
-            'Electrique'
-        ];
-
         $VehiculeManager = new VehiculeManager();
         $vehicule = $VehiculeManager->select($id);
-
-        require 'View/update_form_vehicule.php';
+        return $vehicule;
     }
 
     public function updateVehicule($id)
     {
         $VehiculeManager = new VehiculeManager();
         $vehicule = $VehiculeManager->select($id);
-        $vehicule = new Vehicule($id, $_POST['name'], $_POST['type']);
+        $vehicule = new Vehicule($id, $_POST['name'], $_POST['type'], $_POST['catid']);
         $VehiculeManager->update($vehicule);
 
         header('Location: /starwarsMVC/index.php?controller=default&action=home.html');
